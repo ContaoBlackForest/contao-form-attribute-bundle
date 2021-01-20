@@ -1,0 +1,9 @@
+services:
+    BlackForest\Contao\Form\Attribute\Data\Table\FormField\CsvImportController:
+        public: true
+        arguments:
+            - '@contao.framework'
+            - '@database_connection'
+            - '@request_stack'
+            - '@translator'
+            - '%kernel.project_dir%'
