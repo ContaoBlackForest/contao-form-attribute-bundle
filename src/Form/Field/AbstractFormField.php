@@ -99,6 +99,11 @@ abstract class AbstractFormField
         }
 
         foreach ($options as $key => $option) {
+            if (!isset($option['labelAttribute'], $option['formFieldAttribute'])) {
+                //FIXME handle group options.
+                continue;
+            }
+
             $options[$key]['labelAttribute']     =
                 $option['labelAttribute'] ? ' ' . $this->decodeEntities($option['labelAttribute']) : '';
             $options[$key]['formFieldAttribute'] =
