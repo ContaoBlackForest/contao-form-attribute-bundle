@@ -1,0 +1,13 @@
+
+<?php if ($this->fsType == 'fsStart'): ?>
+
+  <fieldset id="fs_<?= $this->id ?>" <?php if ($this->class): ?> class="<?= $this->class ?>"<?php endif; ?><?= $this->formFieldAttribute ? ' ' .  \Contao\StringUtil::decodeEntities($this->formFieldAttribute) : '' ?>>
+  <?php if ($this->label): ?>
+    <legend><?= $this->label ?></legend>
+  <?php endif; ?>
+
+<?php else: ?>
+
+  </fieldset>
+
+<?php endif; ?>

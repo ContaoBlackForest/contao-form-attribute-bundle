@@ -1,0 +1,27 @@
+services:
+    BlackForest\Contao\Form\Attribute\Form\Field\AbstractFormField:
+        abstract: true
+        public: true
+        arguments:
+            - '@=service("contao.framework").getAdapter("\\Contao\\StringUtil")'
+
+    BlackForest\Contao\Form\Attribute\Form\Field\RadioButtonField:
+        parent: BlackForest\Contao\Form\Attribute\Form\Field\AbstractFormField
+        tags:
+            -   name: contao.hook
+                hook: loadFormField
+                method: __invoke
+
+    BlackForest\Contao\Form\Attribute\Form\Field\SelectMenuField:
+        parent: BlackForest\Contao\Form\Attribute\Form\Field\AbstractFormField
+        tags:
+            -   name: contao.hook
+                hook: loadFormField
+                method: __invoke
+
+    BlackForest\Contao\Form\Attribute\Form\Field\TextField:
+        parent: BlackForest\Contao\Form\Attribute\Form\Field\AbstractFormField
+        tags:
+            -   name: contao.hook
+                hook: loadFormField
+                method: __invoke
